@@ -13,5 +13,4 @@ A Admin can create new product, or edit or delete them.
 - **database.js** : This file holds code for making sequelize enviroment connection to database.
 - **views/** : This folder holds files that will render at client side.
 - **public/** : This folder holds resources to render views files.
-- **.env** : Stores enviroments variables like ports, database passwords or api keys and other secrets. **Must be created by user on his/her system.**
   
