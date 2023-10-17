@@ -1,0 +1,3 @@
+# files to be ignored while pushing
+node_modules/
+.env
