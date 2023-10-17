@@ -24,7 +24,6 @@ app.use(routes);
 
 // syncing sequelize connection to database
 seqEnv.sync().then((res)=>{
-    console.log(res);
     // listening to server if connection to database is succesfull
     app.listen(port, ()=>{
         console.log(`server is listening at port: http://localhost:${port}`);
