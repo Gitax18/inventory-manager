@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Seq = require('sequelize');
+const path = require('path')
 require('dotenv').config();
 
 
@@ -15,9 +16,10 @@ const app = express();
 const port = process.env.port;
 
 // configuring app settings
-app.use(bodyParser.urlencoded({extended: false})); // setting bodyparser to encode incoming data 
-app.set('view engine', 'ejs'); // setting view engine to ejs
-app.set('views', 'views'); // setting default views directory 
+app.use(express.static(path.join(__dirname, 'public'))); // making public folder static.
+app.use(bodyParser.urlencoded({extended: false})); // setting bodyparser to encode incoming data.
+app.set('view engine', 'ejs'); // setting view engine to ejs.
+app.set('views', 'views'); // setting default views directory. 
 
 // calling routes
 app.use(routes);
