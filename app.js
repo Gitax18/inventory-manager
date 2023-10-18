@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: false})); // setting bodyparser to enco
 app.set('view engine', 'ejs'); // setting view engine to ejs
 app.set('views', 'views'); // setting default views directory 
 
+// calling routes
 app.use(routes);
 
 
