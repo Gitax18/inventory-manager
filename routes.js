@@ -23,6 +23,7 @@ const router = express.Router();
 // getting incoming request and calling proper controller logic 
 router.get('/', controller.getIndex);
 router.get('/add-product', controller.getForm);
+router.get('/details/:productId', controller.getDetails);
 router.post('/admin/add-product', upload.single('image'), controller.postAddProduct);
 router.get('/admin/edit-product/:productId', controller.getEditProduct);
 router.post('/admin/edit-product/:productId', upload.single('image'), controller.postEditProduct);

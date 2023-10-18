@@ -25,6 +25,19 @@ exports.getForm = (req,res) =>{
     })
 }
 
+
+exports.getDetails = (req, res) =>{
+    const id = req.params.productId;
+    model.Product.findByPk(id).then(pd => {
+        res.render('details', {
+            pageTitle: 'Invento',
+            dt : pd
+        })
+        
+    })
+}
+
+
 exports.postAddProduct = (req, res)=>{
     // console.log('incoming request', req.body);
     // console.log('incoming file', req.file);
