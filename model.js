@@ -4,11 +4,11 @@ const seqEnv = require('./database');
 
 /* Models structure
 * Model 'Category': id, title, description.
-* Model 'Item': id, title, description, price, category.
+* Model 'Item': id, title, image, description, price, category.
 */
 
 // building model for category.
-const category = seqEnv.define('category', {
+const category = seqEnv.define('categories', {
     id: {
         type: Seq.INTEGER,
         autoIncrement: true,
@@ -27,7 +27,7 @@ const category = seqEnv.define('category', {
 
 
 // building model for item.
-const item = seqEnv.define('item', {
+const product = seqEnv.define('products', {
     id: {
         type: Seq.INTEGER,
         autoIncrement: true,
@@ -37,6 +37,10 @@ const item = seqEnv.define('item', {
     title: {
         type: Seq.STRING,
         allowNull: false
+    },
+    image: {
+        type: Seq.TEXT('medium'),
+        // allowNull: false
     },
     description: {
         type: Seq.STRING,
@@ -52,5 +56,5 @@ const item = seqEnv.define('item', {
     }
 });
 
-exports.category = category;
-exports.item = item;
+exports.Category = category;
+exports.Product = product;
