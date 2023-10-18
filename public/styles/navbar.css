@@ -33,6 +33,12 @@
     font-size: 2.4rem;
 }
 
+.logo a{
+    text-decoration: none;
+    color: var(--light-grey);
+}
+
+
 .nav-items{
     display: flex;
     align-items: center;
