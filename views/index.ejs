@@ -1,11 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= pageTitle %></title>
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
-    <h1>hooray</h1>
+    <%- include('includes/nav.ejs') %>
+
+    <main class="main">
+        <h1 class="primary-title">Welcome to Invento</h1>
+        <h3 class="secondary-title">Your Personal Inventory Manager</h3>
+        <section class="cards">
+
+             <%  for (let dt of data ) { %>
+             
+                <div class="card"> 
+                    <a href="#card" class="card-main">
+                        <img src="<%=  dt.image %>" alt="mercedes" class="card-img">
+                        <h2 class="card-title"><%=  dt.title %></h2>
+                        <h3 class="card-price"><%=  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR'}).format(dt.price) %> </h3>
+                    </a>
+                    <div class="card-buttons">
+                        <a  href="/admin/edit-product/<%= dt.id %>?edit=true" id="edit-btn">Edit</a>
+                        <form action="/admin/delete" method="post" class="form-del-req">
+                            <input type="hidden" name="Id" value="<%= dt.id %>">
+                            <button id="del-btn" type="submit">Del</button>
+                        </form>
+                    </div>
+                </div>
+            <%  } %> 
+
+            
+
+
+        </section>
+    </main>
 </body>
 </html>

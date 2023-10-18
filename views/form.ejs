@@ -1,0 +1,60 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/styles/form.css">
+</head>
+<body>
+    <!--  title, image, description, price, category. -->
+    <%- include('includes/nav.ejs') %>
+    <h1>Form Page</h1>
+    <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>/<%= pd.id %>"  method="post" class="form" enctype="multipart/form-data">
+        <div class="placeholder">
+            <label for="title">Title:</label>
+            <input type="text" name="title" required id="title" value="<% if (editing) { %><%= pd.title %><% } %>">
+        </div>
+        <div class="placeholder">
+            <label for="image">Image:</label>
+            <input type="file" name="image"  id="image" accept="image/*" value="<% if (editing) { %><%= pd.image %><% } %>">
+        </div>
+        <div class="placeholder">
+            <label for="description">Description:</label>
+            <textarea name="description" required id="description" cols="20" rows="5" ><% if (editing) { %><%= pd.description %><% } %></textarea>
+        </div>
+        <div class="placeholder">
+            <label for="price">Price:</label>
+            <input type="number" name="price" required id="price" value="<% if (editing) { %><%= pd.price %><% } %>">
+        </div>
+        <div class="placeholder">
+            <label for="category">Category:</label>
+
+            <select id="category" name="category">
+              <option value="volvo">Volvo XC90</option>
+              <option value="saab">Saab 95</option>
+            </select>
+        </div>
+        <div class="placeholder">
+            <button type="submit" id="form-btn"><% if (editing) { %>Edit<% } else { %>Add<% } %></button>
+        </div>
+    </form>
+</body>
+<script>
+    const btn = document.querySelector('#form-btn');
+    const btnValue = btn.textContent.toLowerCase();
+
+
+    switch(btnValue){
+        case 'add': 
+            btn.style.color = 'blue';
+            btn.style.border = '2px solid blue';
+            btn.style.backgroundColor = '#c0e1ff';
+            break;
+        
+        case 'edit':
+            btn.style.color = 'green';
+            btn.style.border = '2px solid green';
+            btn.style.border = '2px solid green';
+            btn.style.backgroundColor = 'rgb(230, 255, 192)';
+            break;
+            
+    }
+</script>
+
+</head>

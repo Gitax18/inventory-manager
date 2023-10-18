@@ -1,0 +1,31 @@
+.form{
+    margin: auto;
+    width: 30rem;
+    background-color: aliceblue;
+    padding: 3rem;
+}
+
+.placeholder{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.placeholder label{
+    font-size: 1.2rem;
+}
+
+.placeholder input, .placeholder button, .placeholder textarea{
+    height: 2.5rem;
+    font-size: 1.2rem;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.placeholder textarea{
+    resize: none;
+    font-family: inherit;
+    height: 7.5rem;
+    cursor: pointer;
+}
