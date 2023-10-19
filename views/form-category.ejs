@@ -1,0 +1,44 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/styles/form.css">
+</head>
+<body>
+    <%- include('includes/nav.ejs') %>
+    <h1 class="primary-title" >Category Form</h1>
+    <form action="/admin/<% if (editing) { %>edit-category<% } else { %>add-category<% } %>/<%= ct.id %>"  method="post" class="form">
+        <div class="placeholder">
+            <label for="title">Title:</label>
+            <input type="text" name="title" required id="title" value="<% if (editing) { %><%= ct.title %><% } %>">
+        </div>
+        <div class="placeholder">
+            <label for="description">Description:</label>
+            <textarea name="description" required id="description" cols="20" rows="5"  maxlength="250" minlength="20"><% if (editing) { %><%= ct.description %><% } %></textarea>
+        </div>
+        
+        <div class="placeholder">
+            <button type="submit" id="form-btn"><% if (editing) { %>Edit<% } else { %>Add<% } %></button>
+        </div>
+    </form>
+</body>
+<script>
+    const btn = document.querySelector('#form-btn');
+    const btnValue = btn.textContent.toLowerCase();
+
+
+    switch(btnValue){
+        case 'add': 
+            btn.style.color = 'blue';
+            btn.style.border = '2px solid blue';
+            btn.style.backgroundColor = '#c0e1ff';
+            break;
+        
+        case 'edit':
+            btn.style.color = 'green';
+            btn.style.border = '2px solid green';
+            btn.style.border = '2px solid green';
+            btn.style.backgroundColor = 'rgb(230, 255, 192)';
+            break;
+            
+    }
+</script>
+
+</head>

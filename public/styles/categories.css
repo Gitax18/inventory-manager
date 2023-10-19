@@ -1,0 +1,36 @@
+.primary-title{
+    margin: 0 auto 2.4rem;
+}
+
+.card{
+    height: 20rem;
+    height: fit-content;
+    width: 15rem;
+}
+
+.card h2{
+    text-transform: capitalize;
+}
+
+.card p{
+    margin-top: .8rem;
+    font-size: 1.2rem;
+}
+
+.card p::first-letter{
+    text-transform: uppercase;
+}
+
+.card-buttons{
+    height: 4rem;
+    margin: 1.6rem 0 .4rem;
+}
+
+.container-no-cats{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
