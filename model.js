@@ -20,7 +20,7 @@ const category = seqEnv.define('categories', {
         allowNull: false
     },
     description: {
-        type: Seq.STRING,
+        type: Seq.TEXT('medium'),
         allowNull: false
     }
 });
