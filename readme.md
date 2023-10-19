@@ -1,3 +1,4 @@
+
 # Inventory management application
 ### A Project from **[BLUELEARN](https://www.bluelearn.in/)**
 
@@ -6,6 +7,17 @@ A User can select an category and all the items from that category will become v
 A Admin can create new product, or edit or delete them.
 
 This Project is built with **Node.js**, **Express.js**, **MySQL** database, **Sequelize ORM**, and for frontend I am using **EJS** templating engine, **CSS** and basic **Javascript** 
+
+## Navigation
+- [Inventory management application](#inventory-management-application)
+    - [A Project from **BLUELEARN**](#a-project-from-bluelearn)
+  - [Navigation](#navigation)
+  - [Project Architecture](#project-architecture)
+  - [Libraries Used](#libraries-used)
+  - [Installation](#installation)
+  - [Glimpse of the Project](#glimpse-of-the-project)
+  - [Future Updates](#future-updates)
+  - [Socials](#socials)
 
 ## Project Architecture
 I am Not creating seperate folder for each type of file as it will make the project more complex, and it is not neccessary for this kind of small projects.
@@ -19,7 +31,9 @@ I am Not creating seperate folder for each type of file as it will make the proj
 - **public/** : This folder holds resources to render views files.
 - **uploads/** : This folder receive and temporarily stores images/uploads from client side and then delete them after server add those images to database.  
 
-## Libraries/Frameworks Used
+
+
+## Libraries Used
 Here I will explain the use of libraries that I have implemented in this project.
 
 1. **Body Parser** : With this library it becomes easy to encrypt the incoming data into into proper format. 
@@ -81,7 +95,7 @@ Here I will explain the use of libraries that I have implemented in this project
 - **Add/Edit Category Page**
    ![addproduct](/screenshots/category%20form.png)   
 
-## Future Updates/Planing
+## Future Updates
 
 - Authentication for admin / customer
 - Admin 
