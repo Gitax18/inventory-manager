@@ -10,7 +10,7 @@ body{
 .secondary-title{
     text-align: center;
     margin-bottom: 3.2rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .cards{
@@ -96,4 +96,13 @@ body{
     color: red;
     background-color: rgb(255, 192, 192);
     cursor: pointer;
+}
+
+.container-no-pdts{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

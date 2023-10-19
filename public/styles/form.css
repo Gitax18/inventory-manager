@@ -1,6 +1,6 @@
 .form{
     margin: auto;
-    width: 30rem;
+    max-width: 30rem;
     background-color: aliceblue;
     padding: 3rem;
 }
@@ -28,4 +28,15 @@
     font-family: inherit;
     height: 7.5rem;
     cursor: pointer;
+}
+
+.primary-title{
+    text-align: center;
+    font-size: 3.6rem;
+}
+
+@media screen and (max-width: 485px) {
+    .form{
+        padding: .5rem;
+    }
 }

@@ -4,7 +4,7 @@
 <body>
     <!--  title, image, description, price, category. -->
     <%- include('includes/nav.ejs') %>
-    <h1>Form Page</h1>
+    <h1 class="primary-title">Product Form</h1>
     <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>/<%= pd.id %>"  method="post" class="form" enctype="multipart/form-data">
         <div class="placeholder">
             <label for="title">Title:</label>
@@ -12,11 +12,11 @@
         </div>
         <div class="placeholder">
             <label for="image">Image:</label>
-            <input type="file" name="image"  id="image" accept="image/*" value="<% if (editing) { %><%= pd.image %><% } %>">
+            <input type="file" name="image"  id="image" accept="image/*">
         </div>
         <div class="placeholder">
-            <label for="description">Description:</label>
-            <textarea name="description" required id="description" cols="20" rows="5" ><% if (editing) { %><%= pd.description %><% } %></textarea>
+            <label for="description" >Description:</label>
+            <textarea name="description" maxlength="250" required id="description" cols="20" rows="5" ><% if (editing) { %><%= pd.description %><% } %></textarea>
         </div>
         <div class="placeholder">
             <label for="price">Price:</label>
@@ -25,9 +25,14 @@
         <div class="placeholder">
             <label for="category">Category:</label>
 
-            <select id="category" name="category">
-              <option value="volvo">Volvo XC90</option>
-              <option value="saab">Saab 95</option>
+            <select id="category" name="category" >
+            <% if (cts.length > 0) {%>
+                <% cts.forEach(ct => { %>
+                    <option value="<%= ct.title %>"><%= ct.title %></option>
+                    <% }) %>
+                    <% } else {%>
+                        <option value="no-category">no-category</option>
+                <% } %>
             </select>
         </div>
         <div class="placeholder">
@@ -38,8 +43,9 @@
 <script>
     const btn = document.querySelector('#form-btn');
     const btnValue = btn.textContent.toLowerCase();
+    const category = document.querySelector('#category');
 
-
+    category.value = '<%= pd.category%>'
     switch(btnValue){
         case 'add': 
             btn.style.color = 'blue';

@@ -5,27 +5,34 @@
     <%- include('includes/nav.ejs') %>
 
     <main class="main">
-        <h1 class="primary-title">Welcome to Invento</h1>
-        <h3 class="secondary-title">Your Personal Inventory Manager</h3>
-        <section class="cards">
-
-             <%  for (let dt of data ) { %>
-             
-                <div class="card"> 
-                    <a href="/details/<%= dt.id %>" class="card-main">
-                        <img src="<%=  dt.image %>" alt="mercedes" class="card-img">
-                        <h2 class="card-title"><%=  dt.title %></h2>
-                        <h3 class="card-price"><%=  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR'}).format(dt.price) %> </h3>
-                    </a>
-                    <div class="card-buttons">
-                        <a  href="/admin/edit-product/<%= dt.id %>?edit=true" id="edit-btn">Edit</a>
-                        <form action="/admin/delete" method="post" class="form-del-req">
-                            <input type="hidden" name="Id" value="<%= dt.id %>">
-                            <button id="del-btn" type="submit">Del</button>
-                        </form>
+        <% if (data.length>0) { %>
+            
+                <h1 class="primary-title">Welcome to Invento</h1>
+                <h3 class="secondary-title">Your Personal Inventory Manager</h3>
+                <section class="cards">
+    
+                <%  for (let dt of data ) { %>
+                    <div class="card"> 
+                        <a href="/details/<%= dt.id %>" class="card-main">
+                            <img src="<%=  dt.image %>" alt="mercedes" class="card-img">
+                            <h2 class="card-title"><%=  dt.title %></h2>
+                            <h3 class="card-price"><%=  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR'}).format(dt.price) %> </h3>
+                        </a>
+                        <div class="card-buttons">
+                            <a  href="/admin/edit-product/<%= dt.id %>?edit=true" id="edit-btn">Edit</a>
+                            <form action="/admin/delete" method="post" class="form-del-req">
+                                <input type="hidden" name="Id" value="<%= dt.id %>">
+                                <button id="del-btn" type="submit">Del</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            <%  } %> 
+                <%  } %> 
+            <% } else {%>
+                <section class="container-no-pdts">
+                    <h1 class="primary-title">No Products Found</h1>
+                    <p class="secondary-title">Please add products <a href="/add-Product">here</a></p>
+                </section>
+            <% } %>
 
             
 
